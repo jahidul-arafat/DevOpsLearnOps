@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant_data":{"guestpath":"/vagrant_data","hostpath":"/home/jarotball/DevOpsLearnOps/1_devOps_preRequisite_course/resources/vagrantOS/centos7.9/folderToBeSyncedToVM","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
