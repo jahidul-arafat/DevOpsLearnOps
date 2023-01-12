@@ -1,0 +1,6 @@
+{
+    "yaml.schemas": {
+        "kubernetes": "*.yaml",
+        "https://json.schemastore.org/kustomization.json": "file:///Users/jarotball/Study/DevOpsLearnOps/kataBooks/1_agrocd_simple_kubernetes_deployment/pod-definition.yaml"
+    }
+}

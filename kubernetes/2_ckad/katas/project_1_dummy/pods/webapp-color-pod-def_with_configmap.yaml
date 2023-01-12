@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: dev
+  labels:
+    run: webapp-color
+  name: webapp-color
+spec:
+  containers:
+  - image: kodekloud/webapp-color
+    name: webapp-container
+    envFrom:
+      - configMapRef:
+          name: app-config

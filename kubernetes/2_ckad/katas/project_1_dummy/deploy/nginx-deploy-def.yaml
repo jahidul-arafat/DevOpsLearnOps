@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-deploy
+  name: nginx-deploy
+  namespace: dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-pod
+      type: frontend
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginx-pod
+        type: frontend
+    spec:
+      #serviceAccountName: dashboard-sa
+      automountServiceAccountToken: false
+      containers:
+      - image: nginx
+        name: nginx-container

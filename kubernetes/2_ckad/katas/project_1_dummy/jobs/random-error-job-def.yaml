@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  creationTimestamp: null
+  name: random-error-job
+  namespace: dev
+spec:
+  completions: 3
+  parallelism: 3
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: kodekloud/random-error
+        name: random-error-container
+        resources: {}
+      restartPolicy: Never
+status: {}

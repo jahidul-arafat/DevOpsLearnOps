@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    app: blue
+    type: frontend
+  name: nginx
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    resources: {}
+    command:
+      - "sleep"
+      - "1000"
+    
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  tolerations:
+    - key: "app"
+      operator: "Equal"
+      value: "blue"
+      effect: NoSchedule
+  # nodeSelector:
+  #   size: large
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: size
+                operator: Exists
+    
+status: {}

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    run: webapp-mysql-pod
+  name: webapp-service
+  namespace: dev
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 30080
+  selector:
+    run: webapp-mysql-pod
+  type: NodePort
+status:
+  loadBalancer: {}
