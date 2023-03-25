@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    run: elastic-search
+  name: elasticsearch
+  namespace: elastic-stack
+spec:
+  type: NodePort
+  ports:
+  - port: 9200
+    protocol: TCP
+    targetPort: 9200
+    name: port1
+  - port: 9300
+    protocol: TCP
+    targetPort: 9300
+    name: port2
+  selector:
+    run: elastic-search
+status:
+  loadBalancer: {}

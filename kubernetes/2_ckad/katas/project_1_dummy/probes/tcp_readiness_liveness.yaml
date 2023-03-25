@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: goproxy
+  name: goproxy
+spec:
+  containers:
+  - image: registry.k8s.io/goproxy:0.1
+    name: goproxy
+    ports:
+    - containerPort: 8080
+    resources: {}
+    readinessProbe:
+      tcpSocket:
+        port: 8080
+      initialDelaySeconds: 5
+      periodSeconds: 10
+    livenessProbe:
+      tcpSocket:
+        port: 8080
+      initialDelaySeconds: 15
+      periodSeconds: 20
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

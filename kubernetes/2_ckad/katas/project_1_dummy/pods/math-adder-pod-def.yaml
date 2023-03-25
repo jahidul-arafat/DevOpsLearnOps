@@ -5,7 +5,6 @@ metadata:
   labels:
     run: math-adder
   name: math-adder
-  namespace: dev
 spec:
   containers:
   - image: ubuntu

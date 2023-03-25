@@ -5,6 +5,7 @@ metadata:
   name: random-error-job
   namespace: dev
 spec:
+  backoffLimit: 5
   completions: 3
   parallelism: 3
   template:

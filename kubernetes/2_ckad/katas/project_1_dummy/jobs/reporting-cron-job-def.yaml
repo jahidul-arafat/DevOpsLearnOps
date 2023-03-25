@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  creationTimestamp: null
+  name: reporting-cron-job
+  namespace: dev
+spec: #for cronjob
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+      name: reporting-cron-job
+    spec: # for job
+      template:
+        metadata:
+          creationTimestamp: null
+        spec: # for pod
+          containers:
+          - image: reporting-tool
+            name: reporting-cron-job
+            resources: {}
+          restartPolicy: Never
+  schedule: 0/5 * * * ?
+status: {}

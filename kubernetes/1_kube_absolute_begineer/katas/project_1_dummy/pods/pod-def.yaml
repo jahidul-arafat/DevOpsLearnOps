@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: myapp-pod
+  name: frontend
   labels:
-    app: myapp
-    type: backend
+    app: dummy
+    tier: frontend
 spec:
   containers:
-    - name: redis-container
-      image: redis
+    - name: nginx
+      image: nginx

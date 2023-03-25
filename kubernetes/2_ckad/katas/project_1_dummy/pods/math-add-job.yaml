@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  creationTimestamp: null
+  name: math-add
+spec:
+  completions: 3
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: ubuntu
+        name: math-add
+        command: ['expr','2','+','3']
+        resources: {}
+      restartPolicy: Never
+status: {}

@@ -9,6 +9,9 @@ spec:
   containers:
   - image: kodekloud/webapp-color
     name: webapp-container
+    ports:
+      - containerPort: 8080
     envFrom:
       - configMapRef:
           name: app-config
+

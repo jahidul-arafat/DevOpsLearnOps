@@ -6,7 +6,9 @@ metadata:
     app: blue
     type: frontend
   name: nginx
+  namespace: stage
 spec:
+  serviceAccountName: dashboard-sa
   containers:
   - image: nginx
     name: nginx

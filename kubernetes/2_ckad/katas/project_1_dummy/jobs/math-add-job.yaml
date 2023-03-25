@@ -4,7 +4,9 @@ metadata:
   creationTimestamp: null
   name: math-add-job
   namespace: dev
+  
 spec:
+  backoffLimit: 0
   completions: 3
   template:
     metadata:
